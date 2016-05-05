@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
         self.navigationItem.title = "Home"
         let homeService = HomeService();
         homeService.getDataWith(nil, success: { (data, response) -> Void in
-            
             if let result = data as? Dictionary<String, AnyObject> {
                 print("result is \(result)")
             }

@@ -23,13 +23,22 @@ class RequestHelper : NSObject{
             if let params = params {
                 httpRequest.HTTPBody = try NSJSONSerialization.dataWithJSONObject(params, options: [])
             }
-            
         } catch {
             print("JSON serialization failed")
         }
-        httpRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        httpRequest.addValue("application/json", forHTTPHeaderField: "Accept")
         
+        session.configuration.HTTPAdditionalHeaders = [
+            "Accept"           :  "application/json",
+            "Content-Type"     :  "application/json",
+            "Accept-Language"  :  "zh",
+            "Device-Type"      :  "IOS"
+        ]
+        
+        let userDefault = NSUserDefaults.standardUserDefaults()
+        let token = userDefault.stringForKey("token")
+        if (token != nil) {
+            session.configuration.HTTPAdditionalHeaders!["x-auth-token"] = token
+        }
         let task = session.dataTaskWithRequest(httpRequest) { (data, response, error) -> Void in
             
             if let httpResponse = response as? NSHTTPURLResponse {
