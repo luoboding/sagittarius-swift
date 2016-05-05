@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD1DAAC61CDB2CF60049C95E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DAAC51CDB2CF50049C95E /* HomeService.swift */; };
 		BD659B6B1CC3752F00BD76D0 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */; };
 		BDCA8E321CC20C8E0067FDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */; };
 		BDCA8E341CC20C8E0067FDE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E331CC20C8E0067FDE7 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD1DAAC51CDB2CF50049C95E /* HomeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeService.swift; path = home/service/HomeService.swift; sourceTree = "<group>"; };
 		BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestHelper.swift; path = common/util/RequestHelper.swift; sourceTree = "<group>"; };
 		BDCA8E2E1CC20C8E0067FDE7 /* sagittarius-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sagittarius-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD1DAAC41CDB2CD10049C95E /* service */ = {
+			isa = PBXGroup;
+			children = (
+				BD1DAAC51CDB2CF50049C95E /* HomeService.swift */,
+			);
+			name = service;
+			sourceTree = "<group>";
+		};
 		BD659B691CC3743B00BD76D0 /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		BDCA8E501CC223C70067FDE7 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				BD1DAAC41CDB2CD10049C95E /* service */,
 				BDCA8E511CC2253B0067FDE7 /* controller */,
 			);
 			name = home;
@@ -259,6 +270,7 @@
 				BD659B6B1CC3752F00BD76D0 /* RequestHelper.swift in Sources */,
 				BDCA8E461CC20DBF0067FDE7 /* TabbarViewController.swift in Sources */,
 				BDCA8E5B1CC226510067FDE7 /* ContestViewController.swift in Sources */,
+				BD1DAAC61CDB2CF60049C95E /* HomeService.swift in Sources */,
 				BDCA8E571CC2261C0067FDE7 /* HallViewController.swift in Sources */,
 				BDCA8E531CC225D50067FDE7 /* HomeViewController.swift in Sources */,
 			);

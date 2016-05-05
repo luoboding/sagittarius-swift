@@ -13,6 +13,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Home"
+        let homeService = HomeService();
+        homeService.getDataWith(nil, success: { (data, response) -> Void in
+            
+            if let result = data as? Dictionary<String, AnyObject> {
+                print("result is \(result)")
+            }
+        }) { (response) -> Void in
+            print("error is \(response)")
+        }
 
         // Do any additional setup after loading the view.
     }
