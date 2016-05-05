@@ -4,6 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'sagittarius-swift' do
+    pod 'ReachabilitySwift', :git => 'https://github.com/ashleymills/Reachability.swift'
 
 end
 

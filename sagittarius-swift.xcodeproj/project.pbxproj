@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21396AF3B312DC0523E2FF74 /* Pods_sagittarius_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF6DD40EF8982A0C687D431 /* Pods_sagittarius_swift.framework */; };
 		BD1DAAC61CDB2CF60049C95E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DAAC51CDB2CF50049C95E /* HomeService.swift */; };
+		BD1DAACB1CDB4CB90049C95E /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DAACA1CDB4CB90049C95E /* HomeNavigationView.swift */; };
+		BD1DAACD1CDB50840049C95E /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD1DAACC1CDB50840049C95E /* images.bundle */; };
 		BD659B6B1CC3752F00BD76D0 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */; };
 		BDCA8E321CC20C8E0067FDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */; };
 		BDCA8E341CC20C8E0067FDE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E331CC20C8E0067FDE7 /* ViewController.swift */; };
@@ -23,7 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		169963946E4CC17CAF5BDA7F /* Pods-sagittarius-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sagittarius-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-sagittarius-swift/Pods-sagittarius-swift.release.xcconfig"; sourceTree = "<group>"; };
+		63FC8B5B388455AA4A3AB762 /* Pods-sagittarius-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sagittarius-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sagittarius-swift/Pods-sagittarius-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		BD1DAAC51CDB2CF50049C95E /* HomeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeService.swift; path = home/service/HomeService.swift; sourceTree = "<group>"; };
+		BD1DAACA1CDB4CB90049C95E /* HomeNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNavigationView.swift; path = home/view/HomeNavigationView.swift; sourceTree = "<group>"; };
+		BD1DAACC1CDB50840049C95E /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
 		BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestHelper.swift; path = common/util/RequestHelper.swift; sourceTree = "<group>"; };
 		BDCA8E2E1CC20C8E0067FDE7 /* sagittarius-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sagittarius-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +45,7 @@
 		BDCA8E561CC2261C0067FDE7 /* HallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HallViewController.swift; path = hall/controller/HallViewController.swift; sourceTree = "<group>"; };
 		BDCA8E5A1CC226510067FDE7 /* ContestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContestViewController.swift; path = contest/controller/ContestViewController.swift; sourceTree = "<group>"; };
 		BDCA8E5E1CC2267B0067FDE7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = user/controller/UserViewController.swift; sourceTree = "<group>"; };
+		FBF6DD40EF8982A0C687D431 /* Pods_sagittarius_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sagittarius_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,18 +53,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21396AF3B312DC0523E2FF74 /* Pods_sagittarius_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221AFF530E8EE5E847763DFA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63FC8B5B388455AA4A3AB762 /* Pods-sagittarius-swift.debug.xcconfig */,
+				169963946E4CC17CAF5BDA7F /* Pods-sagittarius-swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		686498EB089964E97A65DE11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBF6DD40EF8982A0C687D431 /* Pods_sagittarius_swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD1DAAC41CDB2CD10049C95E /* service */ = {
 			isa = PBXGroup;
 			children = (
 				BD1DAAC51CDB2CF50049C95E /* HomeService.swift */,
 			);
 			name = service;
+			sourceTree = "<group>";
+		};
+		BD1DAAC91CDB4C8B0049C95E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BD1DAACA1CDB4CB90049C95E /* HomeNavigationView.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 		BD659B691CC3743B00BD76D0 /* util */ = {
@@ -72,6 +106,8 @@
 			children = (
 				BDCA8E301CC20C8E0067FDE7 /* sagittarius-swift */,
 				BDCA8E2F1CC20C8E0067FDE7 /* Products */,
+				221AFF530E8EE5E847763DFA /* Pods */,
+				686498EB089964E97A65DE11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +122,7 @@
 		BDCA8E301CC20C8E0067FDE7 /* sagittarius-swift */ = {
 			isa = PBXGroup;
 			children = (
+				BD1DAACC1CDB50840049C95E /* images.bundle */,
 				BDCA8E5C1CC2265D0067FDE7 /* user */,
 				BDCA8E581CC226240067FDE7 /* contest */,
 				BDCA8E541CC225F10067FDE7 /* hall */,
@@ -130,6 +167,7 @@
 		BDCA8E501CC223C70067FDE7 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				BD1DAAC91CDB4C8B0049C95E /* view */,
 				BD1DAAC41CDB2CD10049C95E /* service */,
 				BDCA8E511CC2253B0067FDE7 /* controller */,
 			);
@@ -199,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDCA8E401CC20C8F0067FDE7 /* Build configuration list for PBXNativeTarget "sagittarius-swift" */;
 			buildPhases = (
+				011A9975C7DF71294623B271 /* Check Pods Manifest.lock */,
 				BDCA8E2A1CC20C8E0067FDE7 /* Sources */,
 				BDCA8E2B1CC20C8E0067FDE7 /* Frameworks */,
 				BDCA8E2C1CC20C8E0067FDE7 /* Resources */,
+				AAEF4040FA16B378068497BF /* Embed Pods Frameworks */,
+				B72BB54F6768024FDDFA37CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,11 +292,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDCA8E3C1CC20C8F0067FDE7 /* LaunchScreen.storyboard in Resources */,
+				BD1DAACD1CDB50840049C95E /* images.bundle in Resources */,
 				BDCA8E391CC20C8F0067FDE7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		011A9975C7DF71294623B271 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AAEF4040FA16B378068497BF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sagittarius-swift/Pods-sagittarius-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B72BB54F6768024FDDFA37CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sagittarius-swift/Pods-sagittarius-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BDCA8E2A1CC20C8E0067FDE7 /* Sources */ = {
@@ -265,6 +355,7 @@
 				BDCA8E341CC20C8E0067FDE7 /* ViewController.swift in Sources */,
 				BDCA8E5F1CC2267B0067FDE7 /* UserViewController.swift in Sources */,
 				BDCA8E4D1CC20F9A0067FDE7 /* UIColor+hexColor.swift in Sources */,
+				BD1DAACB1CDB4CB90049C95E /* HomeNavigationView.swift in Sources */,
 				BDCA8E321CC20C8E0067FDE7 /* AppDelegate.swift in Sources */,
 				BDCA8E4F1CC21F660067FDE7 /* NavigationViewController.swift in Sources */,
 				BD659B6B1CC3752F00BD76D0 /* RequestHelper.swift in Sources */,
@@ -373,6 +464,7 @@
 		};
 		BDCA8E411CC20C8F0067FDE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63FC8B5B388455AA4A3AB762 /* Pods-sagittarius-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "sagittarius-swift/Info.plist";
@@ -384,6 +476,7 @@
 		};
 		BDCA8E421CC20C8F0067FDE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 169963946E4CC17CAF5BDA7F /* Pods-sagittarius-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "sagittarius-swift/Info.plist";
