@@ -14,7 +14,7 @@ class HomeNavigationView: UIView {
         super.init(frame: frame);
         self.backgroundColor = UIColor(hexString: "#05121f")
         let logoImageView = UIImageView(frame: CGRect(x: (self.frame.size.width-156/2)/2, y: 31, width: 156/2, height: 42/2))
-        logoImageView.image = UIImage(named: "images.bundle/home/logo")
+        logoImageView.image = UIImage(named: "images.bundle/home/logo@2x")
         self.addSubview(logoImageView)   
     }
 

@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var table = UITableView(frame: UIScreen.mainScreen().bounds, style: .Grouped)
+    var table = UITableView(frame: CGRect(x: 0, y: 64, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: CGRectGetHeight(UIScreen.mainScreen().bounds)-64-49), style: .Grouped)
     var tableData : Dictionary<String, AnyObject>?
     
     override func viewDidLoad() {
@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
             print("error is \(response)")
         }
         self.setNavigationView()
+        self.setLayoutTable()
         
 
         // Do any additional setup after loading the view.
@@ -34,10 +35,18 @@ class HomeViewController: UIViewController {
         let homeNavigationView = HomeNavigationView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 64.0))
         self.view.addSubview(homeNavigationView)
     }
+    
+    func setLayoutTable() -> Void {
+        view.addSubview(table)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 
 }
