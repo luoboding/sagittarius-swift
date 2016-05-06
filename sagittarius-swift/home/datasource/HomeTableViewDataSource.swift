@@ -20,12 +20,11 @@ class HomeTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return items.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        print("item is \(items.count)")
-        return 2
+        return items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

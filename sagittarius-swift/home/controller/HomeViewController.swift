@@ -41,7 +41,8 @@ class HomeViewController: UIViewController{
             if let result = data as? Dictionary <String, AnyObject> {
                 self.tableData["dailyStars"] = result["dailyStars"]
                 self.tableData["recommendPlayers"] = result["recommendPlayers"]
-                print("table data is \(self.tableData)")
+//                print("table data is \(self.tableData)")
+                self.dataSource.items = self.tableData
                 dispatch_async(dispatch_get_main_queue(),{ ()->() in
                     self.table.reloadData()
                 })

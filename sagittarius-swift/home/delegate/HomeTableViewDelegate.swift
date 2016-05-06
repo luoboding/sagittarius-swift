@@ -23,7 +23,6 @@ class HomeTableViewDelegate: NSObject, UITableViewDelegate{
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("click cell")
         cellSelect(indexPath: indexPath)
     }
     
