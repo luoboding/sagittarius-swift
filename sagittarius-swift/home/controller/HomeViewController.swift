@@ -30,7 +30,7 @@ class HomeViewController: UIViewController{
         })
         
         self.navigationController?.navigationBarHidden = true
-        self.setupUi();
+        self.setupUi("-----babababab");
         self.requestData()
     }
     

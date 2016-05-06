@@ -19,7 +19,8 @@ extension HomeViewController {
             objc_setAssociatedObject(self, &homeAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    func setupUi()->Void {
+    func setupUi(key: String)->Void {
+        self.extensionProperty = key
         self.setNavigationView()
         self.setLayoutTable()
     }
@@ -30,7 +31,7 @@ extension HomeViewController {
     }
     
     func setLayoutTable() -> Void {
-        
+        print("key is \(self.extensionProperty)")
         self.table = UITableView(frame: CGRect(x: 0, y: 64, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: CGRectGetHeight(UIScreen.mainScreen().bounds)-64-49), style: .Plain)
         self.table.backgroundColor = UIColor(hexString: "#030c16")
         self.table.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.identifier)
