@@ -13,6 +13,7 @@
 		BD1DAACD1CDB50840049C95E /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD1DAACC1CDB50840049C95E /* images.bundle */; };
 		BD4E53501CDC4E7A0010CB56 /* HomeTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E534F1CDC4E7A0010CB56 /* HomeTableViewDataSource.swift */; };
 		BD4E53531CDC56050010CB56 /* HomeTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E53521CDC56050010CB56 /* HomeTableViewDelegate.swift */; };
+		BD4E53561CDC9EAE0010CB56 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E53551CDC9EAE0010CB56 /* Constant.swift */; };
 		BD659B6B1CC3752F00BD76D0 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */; };
 		BDCA8E321CC20C8E0067FDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */; };
 		BDCA8E341CC20C8E0067FDE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E331CC20C8E0067FDE7 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		BD1DAACC1CDB50840049C95E /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
 		BD4E534F1CDC4E7A0010CB56 /* HomeTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewDataSource.swift; path = home/datasource/HomeTableViewDataSource.swift; sourceTree = "<group>"; };
 		BD4E53521CDC56050010CB56 /* HomeTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewDelegate.swift; path = home/delegate/HomeTableViewDelegate.swift; sourceTree = "<group>"; };
+		BD4E53551CDC9EAE0010CB56 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = common/constant/Constant.swift; sourceTree = "<group>"; };
 		BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestHelper.swift; path = common/util/RequestHelper.swift; sourceTree = "<group>"; };
 		BDCA8E2E1CC20C8E0067FDE7 /* sagittarius-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sagittarius-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 			name = delegate;
 			sourceTree = "<group>";
 		};
+		BD4E53541CDC9E820010CB56 /* constant */ = {
+			isa = PBXGroup;
+			children = (
+				BD4E53551CDC9EAE0010CB56 /* Constant.swift */,
+			);
+			name = constant;
+			sourceTree = "<group>";
+		};
 		BD659B691CC3743B00BD76D0 /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		BDCA8E431CC20D650067FDE7 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				BD4E53541CDC9E820010CB56 /* constant */,
 				BD659B691CC3743B00BD76D0 /* util */,
 				BDCA8E471CC20EF00067FDE7 /* extension */,
 				BDCA8E441CC20D740067FDE7 /* controller */,
@@ -376,6 +387,7 @@
 			files = (
 				BDCA8E341CC20C8E0067FDE7 /* ViewController.swift in Sources */,
 				BDCA8E5F1CC2267B0067FDE7 /* UserViewController.swift in Sources */,
+				BD4E53561CDC9EAE0010CB56 /* Constant.swift in Sources */,
 				BDCA8E4D1CC20F9A0067FDE7 /* UIColor+hexColor.swift in Sources */,
 				BD4E53531CDC56050010CB56 /* HomeTableViewDelegate.swift in Sources */,
 				BD1DAACB1CDB4CB90049C95E /* HomeNavigationView.swift in Sources */,
