@@ -14,6 +14,7 @@
 		BD4E53501CDC4E7A0010CB56 /* HomeTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E534F1CDC4E7A0010CB56 /* HomeTableViewDataSource.swift */; };
 		BD4E53531CDC56050010CB56 /* HomeTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E53521CDC56050010CB56 /* HomeTableViewDelegate.swift */; };
 		BD4E53561CDC9EAE0010CB56 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E53551CDC9EAE0010CB56 /* Constant.swift */; };
+		BD4E53591CDCA5D80010CB56 /* HomeViewController+setupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E53581CDCA5D80010CB56 /* HomeViewController+setupUI.swift */; };
 		BD659B6B1CC3752F00BD76D0 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */; };
 		BDCA8E321CC20C8E0067FDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */; };
 		BDCA8E391CC20C8F0067FDE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDCA8E381CC20C8F0067FDE7 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		BD4E534F1CDC4E7A0010CB56 /* HomeTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewDataSource.swift; path = home/datasource/HomeTableViewDataSource.swift; sourceTree = "<group>"; };
 		BD4E53521CDC56050010CB56 /* HomeTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewDelegate.swift; path = home/delegate/HomeTableViewDelegate.swift; sourceTree = "<group>"; };
 		BD4E53551CDC9EAE0010CB56 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = common/constant/Constant.swift; sourceTree = "<group>"; };
+		BD4E53581CDCA5D80010CB56 /* HomeViewController+setupUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HomeViewController+setupUI.swift"; path = "home/extension/HomeViewController+setupUI.swift"; sourceTree = "<group>"; };
 		BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestHelper.swift; path = common/util/RequestHelper.swift; sourceTree = "<group>"; };
 		BDCA8E2E1CC20C8E0067FDE7 /* sagittarius-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sagittarius-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			name = constant;
 			sourceTree = "<group>";
 		};
+		BD4E53571CDCA5940010CB56 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				BD4E53581CDCA5D80010CB56 /* HomeViewController+setupUI.swift */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
 		BD659B691CC3743B00BD76D0 /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 		BDCA8E501CC223C70067FDE7 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				BD4E53571CDCA5940010CB56 /* extension */,
 				BD4E53511CDC55E40010CB56 /* delegate */,
 				BD4E534E1CDC4DEA0010CB56 /* datasource */,
 				BD1DAAC91CDB4C8B0049C95E /* view */,
@@ -393,6 +404,7 @@
 				BDCA8E461CC20DBF0067FDE7 /* TabbarViewController.swift in Sources */,
 				BDCA8E5B1CC226510067FDE7 /* ContestViewController.swift in Sources */,
 				BD4E53501CDC4E7A0010CB56 /* HomeTableViewDataSource.swift in Sources */,
+				BD4E53591CDCA5D80010CB56 /* HomeViewController+setupUI.swift in Sources */,
 				BD1DAAC61CDB2CF60049C95E /* HomeService.swift in Sources */,
 				BDCA8E571CC2261C0067FDE7 /* HallViewController.swift in Sources */,
 				BDCA8E531CC225D50067FDE7 /* HomeViewController.swift in Sources */,

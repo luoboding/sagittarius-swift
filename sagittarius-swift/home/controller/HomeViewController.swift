@@ -23,16 +23,14 @@ class HomeViewController: UIViewController{
         print("enmu is \(Constant.contestStatus.Cancelled.rawValue)")
         
         self.tableData = Dictionary<String, AnyObject>();
-        
         dataSource = HomeTableViewDataSource(aIdentifier: self.identifier)
+        
         delegate = HomeTableViewDelegate(aCellSelect: { (indexPath) -> Void in
             print("clicked");
         })
         
         self.navigationController?.navigationBarHidden = true
-        
-        self.setNavigationView()
-        self.setLayoutTable()
+        self.setupUi();
         self.requestData()
     }
     
@@ -53,23 +51,6 @@ class HomeViewController: UIViewController{
             }) { (response) -> Void in
                 print("error is \(response)")
         }
-    }
-    
-    func setNavigationView() -> Void {
-        let homeNavigationView = HomeNavigationView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 64.0))
-        self.view.addSubview(homeNavigationView)
-    }
-    
-    func setLayoutTable() -> Void {
-        
-        self.table = UITableView(frame: CGRect(x: 0, y: 64, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: CGRectGetHeight(UIScreen.mainScreen().bounds)-64-49), style: .Plain)
-        self.table.backgroundColor = UIColor(hexString: "#030c16")
-        self.table.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.identifier)
-        self.table.separatorStyle = .None
-        self.table.dataSource = self.dataSource
-        self.table.delegate = self.delegate
-        self.view.addSubview(self.table)
-        
     }
     
     override func didReceiveMemoryWarning() {
