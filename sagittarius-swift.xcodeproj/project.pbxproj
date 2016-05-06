@@ -16,7 +16,6 @@
 		BD4E53561CDC9EAE0010CB56 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E53551CDC9EAE0010CB56 /* Constant.swift */; };
 		BD659B6B1CC3752F00BD76D0 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */; };
 		BDCA8E321CC20C8E0067FDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */; };
-		BDCA8E341CC20C8E0067FDE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E331CC20C8E0067FDE7 /* ViewController.swift */; };
 		BDCA8E391CC20C8F0067FDE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDCA8E381CC20C8F0067FDE7 /* Assets.xcassets */; };
 		BDCA8E3C1CC20C8F0067FDE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCA8E3A1CC20C8F0067FDE7 /* LaunchScreen.storyboard */; };
 		BDCA8E461CC20DBF0067FDE7 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E451CC20DBF0067FDE7 /* TabbarViewController.swift */; };
@@ -40,7 +39,6 @@
 		BD659B6A1CC3752F00BD76D0 /* RequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestHelper.swift; path = common/util/RequestHelper.swift; sourceTree = "<group>"; };
 		BDCA8E2E1CC20C8E0067FDE7 /* sagittarius-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sagittarius-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BDCA8E331CC20C8E0067FDE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BDCA8E381CC20C8F0067FDE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDCA8E3B1CC20C8F0067FDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDCA8E3D1CC20C8F0067FDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				BDCA8E501CC223C70067FDE7 /* home */,
 				BDCA8E431CC20D650067FDE7 /* common */,
 				BDCA8E311CC20C8E0067FDE7 /* AppDelegate.swift */,
-				BDCA8E331CC20C8E0067FDE7 /* ViewController.swift */,
 				BDCA8E381CC20C8F0067FDE7 /* Assets.xcassets */,
 				BDCA8E3A1CC20C8F0067FDE7 /* LaunchScreen.storyboard */,
 				BDCA8E3D1CC20C8F0067FDE7 /* Info.plist */,
@@ -385,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDCA8E341CC20C8E0067FDE7 /* ViewController.swift in Sources */,
 				BDCA8E5F1CC2267B0067FDE7 /* UserViewController.swift in Sources */,
 				BD4E53561CDC9EAE0010CB56 /* Constant.swift in Sources */,
 				BDCA8E4D1CC20F9A0067FDE7 /* UIColor+hexColor.swift in Sources */,
