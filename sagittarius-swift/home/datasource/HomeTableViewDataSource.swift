@@ -33,4 +33,10 @@ class HomeTableViewDataSource: NSObject, UITableViewDataSource {
         cell.textLabel?.text = "呼呼"
         return cell
     }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let str = ["", "每日之星", "推荐球员", "球探达人"];
+        print("title is \(str[section])")
+        return str[section];
+    }
 }

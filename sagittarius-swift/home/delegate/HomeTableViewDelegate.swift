@@ -27,12 +27,15 @@ class HomeTableViewDelegate: NSObject, UITableViewDelegate{
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 65;
-    }
-    
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: 100))
-        view.backgroundColor = UIColor.redColor()
-        return view
+        var heightForHeader: CGFloat;
+        switch(section) {
+        case 0:
+            heightForHeader = 5
+        case 3:
+            heightForHeader = 55
+        default:
+            heightForHeader = 30
+        }
+        return heightForHeader
     }
 }
