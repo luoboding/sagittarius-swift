@@ -17,16 +17,20 @@ class HomeTableViewDataSource: NSObject, UITableViewDataSource {
         
         identifier = aIdentifier
         items = aItems
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count;
+        return 2
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        print("item is \(items.count)")
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier)! as UITableViewCell
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier(self.identifier, forIndexPath: indexPath) as UITableViewCell
         
         cell.textLabel?.text = "呼呼"
         return cell

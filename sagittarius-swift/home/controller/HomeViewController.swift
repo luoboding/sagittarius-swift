@@ -12,6 +12,7 @@ class HomeViewController: UIViewController{
     
     var dataSource : HomeTableViewDataSource!
     var delegate : HomeTableViewDelegate!
+    let identifier:String = "homeTableDataSource"
     
     var table : UITableView!
     var tableData : Dictionary<String, AnyObject>!
@@ -19,33 +20,37 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableData = Dictionary<String, AnyObject>();
+        self.tableData = Dictionary<String, AnyObject>();
         
-        dataSource = HomeTableViewDataSource(aIdentifier: "homeTableDataSource", aItems: tableData)
+        dataSource = HomeTableViewDataSource(aIdentifier: self.identifier, aItems: self.tableData)
         delegate = HomeTableViewDelegate(aCellSelect: { (indexPath) -> Void in
-            
+            print("clicked");
         })
         
-        table = UITableView(frame: CGRect(x: 0, y: 64, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: CGRectGetHeight(UIScreen.mainScreen().bounds)-64-49), style: .Grouped)
-        
-        
         self.navigationController?.navigationBarHidden = true
-        let homeService = HomeService();
-        homeService.getDataWith(nil, success: { (data, response) -> Void in
-            if let result = data as? Dictionary <String, AnyObject> {
-                
-                self.tableData["dailyStars"] = result["dailyStars"]
-                self.tableData["recommendPlayers"] = result["recommendPlayers"]
-                self.table.reloadData()
-                
-            }
-        }) { (response) -> Void in
-            print("error is \(response)")
-        }
+        
         self.setNavigationView()
         self.setLayoutTable()
-        
-        // Do any additional setup after loading the view.
+        self.requestData()
+    }
+    
+    func requestData() ->Void {
+        let homeService = HomeService();
+        homeService.getDataWith(nil, success: { (data, response) -> Void in
+            
+            if let result = data as? Dictionary <String, AnyObject> {
+                self.tableData["dailyStars"] = result["dailyStars"]
+                self.tableData["recommendPlayers"] = result["recommendPlayers"]
+                print("table data is \(self.tableData)")
+                dispatch_async(dispatch_get_main_queue(),{ ()->() in
+                    self.table.reloadData()
+                })
+                
+            }
+            
+            }) { (response) -> Void in
+                print("error is \(response)")
+        }
     }
     
     func setNavigationView() -> Void {
@@ -54,9 +59,13 @@ class HomeViewController: UIViewController{
     }
     
     func setLayoutTable() -> Void {
-        table.dataSource = dataSource
-        table.delegate = delegate
-        view.addSubview(table)
+        
+        self.table = UITableView(frame: CGRect(x: 0, y: 64, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: CGRectGetHeight(UIScreen.mainScreen().bounds)-64-49), style: .Grouped)
+        self.table.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.identifier)
+        self.table.dataSource = self.dataSource
+        self.table.delegate = self.delegate
+        self.view.addSubview(self.table)
+        
     }
     
     override func didReceiveMemoryWarning() {
