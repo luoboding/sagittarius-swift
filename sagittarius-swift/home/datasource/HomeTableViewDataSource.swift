@@ -13,10 +13,9 @@ class HomeTableViewDataSource: NSObject, UITableViewDataSource {
     var identifier:String!
     var items: Dictionary<String, AnyObject>!
     
-    init(aIdentifier: String, aItems: [String: AnyObject]!) {
-        
+    init(aIdentifier: String) {
         identifier = aIdentifier
-        items = aItems
+        items = Dictionary<String, AnyObject>()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

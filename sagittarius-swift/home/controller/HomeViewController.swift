@@ -22,7 +22,7 @@ class HomeViewController: UIViewController{
         
         self.tableData = Dictionary<String, AnyObject>();
         
-        dataSource = HomeTableViewDataSource(aIdentifier: self.identifier, aItems: self.tableData)
+        dataSource = HomeTableViewDataSource(aIdentifier: self.identifier)
         delegate = HomeTableViewDelegate(aCellSelect: { (indexPath) -> Void in
             print("clicked");
         })
@@ -41,7 +41,6 @@ class HomeViewController: UIViewController{
             if let result = data as? Dictionary <String, AnyObject> {
                 self.tableData["dailyStars"] = result["dailyStars"]
                 self.tableData["recommendPlayers"] = result["recommendPlayers"]
-//                print("table data is \(self.tableData)")
                 self.dataSource.items = self.tableData
                 dispatch_async(dispatch_get_main_queue(),{ ()->() in
                     self.table.reloadData()
