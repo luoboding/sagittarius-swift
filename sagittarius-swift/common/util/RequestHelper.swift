@@ -8,13 +8,20 @@
 
 import UIKit
 
+typealias SuccessedHttpRequestHandler = (data: AnyObject?, response: NSHTTPURLResponse)->Void
+typealias FailureHttpRequestHandler = (response: NSHTTPURLResponse)->Void
 class RequestHelper : NSObject{
+    
+    var successedHandler: SuccessedHttpRequestHandler!
+    var failureHandler: FailureHttpRequestHandler!
     override init() {
         super.init()
     }
     
-    convenience init(url: String, params: AnyObject?, method: String, success: (data: AnyObject?, response: NSHTTPURLResponse)->Void, failure: (response: NSHTTPURLResponse)->Void) {
+    convenience init(url: String, params: AnyObject?, method: String, success: SuccessedHttpRequestHandler, failure: FailureHttpRequestHandler) {
         self.init()
+        successedHandler = success
+        failureHandler = failure
         let session = NSURLSession.sharedSession()
         let httpRequest = NSMutableURLRequest(URL: NSURL(string:  url)!)
         httpRequest.HTTPMethod = method
@@ -45,25 +52,13 @@ class RequestHelper : NSObject{
                 let statusCode = httpResponse.statusCode
                 switch statusCode {
                     case 500:
-                        failure(response: httpResponse)
+                        self.handleServerAndNormalError(httpResponse)
                     case 200:
-                        if let responseData = data {
-                            do {
-                                let anyObject = try NSJSONSerialization.JSONObjectWithData(responseData, options: .MutableContainers)
-                                success(data: anyObject, response: httpResponse)
-                                
-                            } catch {
-                                success(data: nil, response: httpResponse)
-                            }
-                            
-                        } else {
-                            success(data: nil, response: httpResponse)
-                        }
-                    
+                        self.handleSuccess(data, response: httpResponse)
                     case 401:
-                        failure(response: httpResponse)
+                        self.handleUnauthorizedError(httpResponse)
                     default:
-                        failure(response: httpResponse)
+                        self.handleServerAndNormalError(httpResponse)
                 }
                 return;
             }
@@ -73,5 +68,24 @@ class RequestHelper : NSObject{
         task.resume()
         
         
+    }
+    
+    func handleSuccess(data: AnyObject?, response: NSHTTPURLResponse) {
+        var result: AnyObject?
+        if let responseData = data {
+            do {
+                result = try NSJSONSerialization.JSONObjectWithData(responseData as! NSData, options: .MutableContainers)
+            } catch {
+            }
+        }
+        self.successedHandler(data: result, response: response)
+    }
+    
+    func handleServerAndNormalError (response: NSHTTPURLResponse)->Void {
+        failureHandler(response: response)
+    }
+    
+    func handleUnauthorizedError (response: NSHTTPURLResponse)->Void {
+        failureHandler(response: response)
     }
 }
