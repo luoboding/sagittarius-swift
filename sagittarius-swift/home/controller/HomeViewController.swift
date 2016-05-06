@@ -20,6 +20,8 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("enmu is \(Constant.contestStatus.Cancelled.rawValue)")
+        
         self.tableData = Dictionary<String, AnyObject>();
         
         dataSource = HomeTableViewDataSource(aIdentifier: self.identifier)
