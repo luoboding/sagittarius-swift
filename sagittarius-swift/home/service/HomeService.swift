@@ -11,11 +11,8 @@ import UIKit
 class HomeService: NSObject {
     func getDataWith(data: AnyObject?, success: (data: AnyObject?, response: NSHTTPURLResponse)->Void, failure: (response: NSHTTPURLResponse)->Void) ->Void {
         let url = Constant.initUrl("api/v2/gateway/index");
-        RequestHelper(url: url, params: data, method: "GET", success: { (data, response) -> Void in
-                success(data:  data, response: response)
-            }, failure: { (response) -> Void in
-                failure(response: response)
-        })
+        let request = RequestHelper(url: url, params: data, success: success, failure: failure)
+        request.sendGetRequest()
     }
     
 }

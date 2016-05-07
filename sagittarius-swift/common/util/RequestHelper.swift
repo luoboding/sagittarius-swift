@@ -14,17 +14,20 @@ class RequestHelper : NSObject{
     
     var successedHandler: SuccessedHttpRequestHandler!
     var failureHandler: FailureHttpRequestHandler!
+    var httpRequest : NSMutableURLRequest!
+    var task : NSURLSessionDataTask!
+    var session : NSURLSession!
+    
     override init() {
         super.init()
     }
     
-    convenience init(url: String, params: AnyObject?, method: String, success: SuccessedHttpRequestHandler, failure: FailureHttpRequestHandler) {
+    convenience init(url: String, params: AnyObject?, success: SuccessedHttpRequestHandler, failure: FailureHttpRequestHandler) {
         self.init()
         successedHandler = success
         failureHandler = failure
-        let session = NSURLSession.sharedSession()
-        let httpRequest = NSMutableURLRequest(URL: NSURL(string:  url)!)
-        httpRequest.HTTPMethod = method
+        session = NSURLSession.sharedSession()
+        httpRequest = NSMutableURLRequest(URL: NSURL(string:  url)!)
         
         do {
             if let params = params {
@@ -46,28 +49,49 @@ class RequestHelper : NSObject{
         if (token != nil) {
             session.configuration.HTTPAdditionalHeaders!["x-auth-token"] = token
         }
-        let task = session.dataTaskWithRequest(httpRequest) { (data, response, error) -> Void in
-            
+    }
+    
+    func configTask() {
+        task = session.dataTaskWithRequest(httpRequest) { (data, response, error) -> Void in
             if let httpResponse = response as? NSHTTPURLResponse {
                 let statusCode = httpResponse.statusCode
                 switch statusCode {
-                    case 500:
-                        self.handleServerAndNormalError(httpResponse)
-                    case 200:
-                        self.handleSuccess(data, response: httpResponse)
-                    case 401:
-                        self.handleUnauthorizedError(httpResponse)
-                    default:
-                        self.handleServerAndNormalError(httpResponse)
+                case 500:
+                    self.handleServerAndNormalError(httpResponse)
+                case 200:
+                    self.handleSuccess(data, response: httpResponse)
+                case 401:
+                    self.handleUnauthorizedError(httpResponse)
+                default:
+                    self.handleServerAndNormalError(httpResponse)
                 }
                 return;
             }
-            
         }
-        
+    }
+    
+    func sendPostRequest() {
+        httpRequest.HTTPMethod = "POST"
+        configTask()
         task.resume()
-        
-        
+    }
+    
+    func sendGetRequest() {
+        httpRequest.HTTPMethod = "GET"
+        configTask()
+        task.resume()
+    }
+    
+    func sendPutRequest() {
+        httpRequest.HTTPMethod = "PUT"
+        configTask()
+        task.resume()
+    }
+    
+    func sendDeleteRequest() {
+        httpRequest.HTTPMethod = "DELETE"
+        configTask()
+        task.resume()
     }
     
     func handleSuccess(data: AnyObject?, response: NSHTTPURLResponse) {

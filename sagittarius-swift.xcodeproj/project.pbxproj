@@ -26,6 +26,7 @@
 		BDCA8E571CC2261C0067FDE7 /* HallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E561CC2261C0067FDE7 /* HallViewController.swift */; };
 		BDCA8E5B1CC226510067FDE7 /* ContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E5A1CC226510067FDE7 /* ContestViewController.swift */; };
 		BDCA8E5F1CC2267B0067FDE7 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCA8E5E1CC2267B0067FDE7 /* UserViewController.swift */; };
+		BDDEB8E61CDDCBBC0067B174 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDEB8E51CDDCBBC0067B174 /* CarouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		BDCA8E561CC2261C0067FDE7 /* HallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HallViewController.swift; path = hall/controller/HallViewController.swift; sourceTree = "<group>"; };
 		BDCA8E5A1CC226510067FDE7 /* ContestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContestViewController.swift; path = contest/controller/ContestViewController.swift; sourceTree = "<group>"; };
 		BDCA8E5E1CC2267B0067FDE7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = user/controller/UserViewController.swift; sourceTree = "<group>"; };
+		BDDEB8E51CDDCBBC0067B174 /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarouselView.swift; path = common/view/CarouselView.swift; sourceTree = "<group>"; };
 		FBF6DD40EF8982A0C687D431 /* Pods_sagittarius_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sagittarius_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 		BDCA8E431CC20D650067FDE7 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				BDDEB8E41CDDCB8E0067B174 /* view */,
 				BD4E53541CDC9E820010CB56 /* constant */,
 				BD659B691CC3743B00BD76D0 /* util */,
 				BDCA8E471CC20EF00067FDE7 /* extension */,
@@ -269,6 +272,14 @@
 				BDCA8E5E1CC2267B0067FDE7 /* UserViewController.swift */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		BDDEB8E41CDDCB8E0067B174 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BDDEB8E51CDDCBBC0067B174 /* CarouselView.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +410,7 @@
 				BD4E53531CDC56050010CB56 /* HomeTableViewDelegate.swift in Sources */,
 				BD1DAACB1CDB4CB90049C95E /* HomeNavigationView.swift in Sources */,
 				BDCA8E321CC20C8E0067FDE7 /* AppDelegate.swift in Sources */,
+				BDDEB8E61CDDCBBC0067B174 /* CarouselView.swift in Sources */,
 				BDCA8E4F1CC21F660067FDE7 /* NavigationViewController.swift in Sources */,
 				BD659B6B1CC3752F00BD76D0 /* RequestHelper.swift in Sources */,
 				BDCA8E461CC20DBF0067FDE7 /* TabbarViewController.swift in Sources */,

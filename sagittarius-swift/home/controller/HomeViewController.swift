@@ -28,29 +28,33 @@ class HomeViewController: UIViewController{
         delegate = HomeTableViewDelegate(aCellSelect: { (indexPath) -> Void in
             print("clicked");
         })
-        
         self.navigationController?.navigationBarHidden = true
-        self.setupUi("-----babababab");
+        
         self.requestData()
     }
     
     func requestData() ->Void {
-        let homeService = HomeService();
-        homeService.getDataWith(nil, success: { (data, response) -> Void in
+        
+        let success :SuccessedHttpRequestHandler = { (data, response) -> Void in
             
             if let result = data as? Dictionary <String, AnyObject> {
                 self.tableData["dailyStars"] = result["dailyStars"]
                 self.tableData["recommendPlayers"] = result["recommendPlayers"]
                 self.dataSource.items = self.tableData
+                print("data is \(self.tableData)")
                 dispatch_async(dispatch_get_main_queue(),{ ()->() in
                     self.table.reloadData()
                 })
                 
             }
             
-            }) { (response) -> Void in
-                print("error is \(response)")
         }
+        
+        let failure: FailureHttpRequestHandler = {(response) -> Void in
+            print("error is \(response)")
+        }
+        
+        HomeService().getDataWith(nil, success: success, failure: failure);
     }
     
     override func didReceiveMemoryWarning() {
