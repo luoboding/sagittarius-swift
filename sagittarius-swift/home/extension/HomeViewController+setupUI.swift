@@ -9,7 +9,7 @@
 import UIKit
 import ObjectiveC
 private var homeAssociationKey: String = "extensionProperty"
-extension HomeViewController {
+extension HomeViewController{
     
     var extensionProperty : String {
         get {
@@ -39,6 +39,9 @@ extension HomeViewController {
         self.table.dataSource = self.dataSource
         self.table.delegate = self.delegate
         self.view.addSubview(self.table)
+        let imageUrl = ["images.bundle/home/test/test_EPL.jpg", "images.bundle/home/test/test_NBA.jpg"]
+        let carouselView = CarouselView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 113), delegate: self, imageUrls: imageUrl, placeHolderImage: "", timeInterval: 3, currentPageIndicatorColor: UIColor.whiteColor(), pageIndicatorColor: UIColor.lightGrayColor())
+        self.table.tableHeaderView = carouselView
         
     }
 }

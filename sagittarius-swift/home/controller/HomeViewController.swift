@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController{
+class HomeViewController: UIViewController, CarouselViewDelegate{
     
     var dataSource : HomeTableViewDataSource!
     var delegate : HomeTableViewDelegate!
@@ -29,7 +29,7 @@ class HomeViewController: UIViewController{
             print("clicked");
         })
         self.navigationController?.navigationBarHidden = true
-        
+        self.setupUi("-----babababab");
         self.requestData()
     }
     
@@ -41,11 +41,7 @@ class HomeViewController: UIViewController{
                 self.tableData["dailyStars"] = result["dailyStars"]
                 self.tableData["recommendPlayers"] = result["recommendPlayers"]
                 self.dataSource.items = self.tableData
-                print("data is \(self.tableData)")
-                dispatch_async(dispatch_get_main_queue(),{ ()->() in
-                    self.table.reloadData()
-                })
-                
+                self.table.reloadData()
             }
             
         }
@@ -65,6 +61,10 @@ class HomeViewController: UIViewController{
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
+    }
+    
+    func didClickedImageAtIndex(index: Int) {
+        print("clicked at \(index)")
     }
 
 }

@@ -102,14 +102,22 @@ class RequestHelper : NSObject{
             } catch {
             }
         }
-        self.successedHandler(data: result, response: response)
+        dispatch_async(dispatch_get_main_queue(),{ ()->() in
+            self.successedHandler(data: result, response: response)
+        })
+        
     }
     
     func handleServerAndNormalError (response: NSHTTPURLResponse)->Void {
-        failureHandler(response: response)
+        dispatch_async(dispatch_get_main_queue(),{ ()->() in
+            self.failureHandler(response: response)
+        })
+        
     }
     
     func handleUnauthorizedError (response: NSHTTPURLResponse)->Void {
-        failureHandler(response: response)
+        dispatch_async(dispatch_get_main_queue(),{ ()->() in
+            self.failureHandler(response: response)
+        })
     }
 }
