@@ -13,9 +13,16 @@ class HomeNavigationView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame);
         self.backgroundColor = UIColor(hexString: "#05121f")
-        let logoImageView = UIImageView(frame: CGRect(x: (self.frame.size.width-156/2)/2, y: 31, width: 156/2, height: 42/2))
+        let logoImageView = UIImageView()
         logoImageView.image = UIImage(named: "images.bundle/home/logo@2x")
-        self.addSubview(logoImageView)   
+        self.addSubview(logoImageView)
+        logoImageView.snp_makeConstraints { (make) -> Void in
+            make.centerX.equalTo(self)
+            make.top.equalTo(31.0)
+            make.height.equalTo(21)
+            make.width.equalTo(78)
+        }
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
