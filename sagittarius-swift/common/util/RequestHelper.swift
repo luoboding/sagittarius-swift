@@ -52,9 +52,11 @@ class RequestHelper : NSObject{
     }
     
     func configTask() {
+        print("start here")
         task = session.dataTaskWithRequest(httpRequest) { (data, response, error) -> Void in
             if let httpResponse = response as? NSHTTPURLResponse {
                 let statusCode = httpResponse.statusCode
+                print("status code is \(statusCode)")
                 switch statusCode {
                 case 500:
                     self.handleServerAndNormalError(httpResponse)

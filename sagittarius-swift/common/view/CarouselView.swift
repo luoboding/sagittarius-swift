@@ -25,13 +25,11 @@ class CarouselView: UIView, UIScrollViewDelegate{
     var scrollView: UIScrollView!
     var pageControl: UIPageControl!
     
-    convenience init(frame: CGRect, delegate: CarouselViewDelegate, imageUrls: [String],  placeHolderImage: String, timeInterval: NSTimeInterval,  currentPageIndicatorColor: UIColor, pageIndicatorColor: UIColor) {
+    convenience init(frame: CGRect, delegate: CarouselViewDelegate, placeHolderImage: String, timeInterval: NSTimeInterval,  currentPageIndicatorColor: UIColor, pageIndicatorColor: UIColor) {
         self.init(frame: frame)
         
         self.delegate = delegate
-        self.imageUrls = imageUrls
         self.placeHolderImage = placeHolderImage
-        self.count = self.imageUrls.count
         self.timeInterval = timeInterval
         self.currentPageIndicatorColor = currentPageIndicatorColor
         self.pageIndicatorColor = pageIndicatorColor
@@ -43,24 +41,25 @@ class CarouselView: UIView, UIScrollViewDelegate{
         let scrollH = self.frame.size.height
         if self.count > 0 {
             for var i = 0; i<self.count; i++ {
-                let imageView = UIImageView(frame: CGRect(x: scrollW * CGFloat(i), y: 0, width: scrollW, height: scrollH))
+                let imageView = UIImageView(frame: CGRect(x: scrollW * CGFloat(i) + scrollW, y: 0, width: scrollW, height: scrollH))
                 imageView.clipsToBounds = true;
                 imageView.userInteractionEnabled = true
                 imageView.contentMode = .ScaleAspectFill
                 
                 if let item = self.imageUrls[i] as? Dictionary<String, AnyObject> {
-                    print("url is \(item["viewImageUrl"])")
-                    imageView.loadWithUrl((item["viewImageUrl"] as? String)!, placeHolder: "images.bundle/home/test/test_EPL.jpg")
+                    imageView.loadWithUrl((item["viewImageUrl"] as? String)!, placeHolder: self.placeHolderImage)
                 }
                 let tap = UITapGestureRecognizer(target: self, action: "imageViewTaped:")
                 imageView.addGestureRecognizer(tap)
                 scrollView.addSubview(imageView)
             }
         }
+        
         if self.count > 0 {
             self.addTimer()
             pageControl.numberOfPages = self.count
-            self.scrollView.contentSize = CGSize(width: CGFloat(self.count + 2) * scrollW, height: 0)
+            self.scrollView.scrollRectToVisible(CGRect(x: scrollW, y: 0, width: scrollW, height: scrollH), animated: false)
+            self.scrollView.contentSize = CGSize(width: CGFloat(self.count + 2) * scrollW, height: scrollH)
         }
     }
     
@@ -78,7 +77,7 @@ class CarouselView: UIView, UIScrollViewDelegate{
         
         scrollView.scrollsToTop = false;
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.contentOffset = CGPoint(x: scrollW, y: 0)
+        scrollView.contentOffset = CGPoint(x: 0, y: 0)
         scrollView.pagingEnabled = true
         self.addSubview(scrollView)
         
@@ -88,10 +87,6 @@ class CarouselView: UIView, UIScrollViewDelegate{
         pageControl.pageIndicatorTintColor = self.pageIndicatorColor
         self.addSubview(pageControl)
         scrollView.delegate = self
-        print("init over")
-        
-        
-        
     }
     
     func addTimer() {
@@ -102,6 +97,7 @@ class CarouselView: UIView, UIScrollViewDelegate{
     func removeTimer () {
         if self.timer.valid {
             self.timer.invalidate()
+            self.timer = nil
         }
     }
     
@@ -109,7 +105,7 @@ class CarouselView: UIView, UIScrollViewDelegate{
         
         let currentPage = self.pageControl.currentPage
         let scrollW = self.frame.size.width
-        let point = CGPointMake(CGFloat(currentPage + 1) * scrollW, 0)
+        let point = CGPointMake(CGFloat(currentPage + 2) * scrollW, 0)
         self.scrollView.setContentOffset(point, animated: true)
         
     }
