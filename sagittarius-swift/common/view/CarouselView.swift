@@ -15,7 +15,7 @@ protocol CarouselViewDelegate {
 class CarouselView: UIView, UIScrollViewDelegate{
 
     var delegate : CarouselViewDelegate?
-    var imageUrls : [String]!
+    var imageUrls : [AnyObject]!
     var count : Int!
     var timeInterval : NSTimeInterval!
     var currentPageIndicatorColor : UIColor!
@@ -38,36 +38,51 @@ class CarouselView: UIView, UIScrollViewDelegate{
         self.setupMainView()
     }
     
-    func setupMainView() {
+    func reLayout() {
         let scrollW = self.frame.size.width
         let scrollH = self.frame.size.height
-        
-        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: scrollW, height: scrollH))
         if self.count > 0 {
             for var i = 0; i<self.count; i++ {
                 let imageView = UIImageView(frame: CGRect(x: scrollW * CGFloat(i), y: 0, width: scrollW, height: scrollH))
                 imageView.clipsToBounds = true;
                 imageView.userInteractionEnabled = true
                 imageView.contentMode = .ScaleAspectFill
-                imageView.tag = i
                 
-                print("i is \(i)")
-                imageView.image = UIImage(named: self.imageUrls[i])
+                if let item = self.imageUrls[i] as? Dictionary<String, AnyObject> {
+                    print("url is \(item["viewImageUrl"])")
+                    imageView.loadWithUrl((item["viewImageUrl"] as? String)!, placeHolder: "images.bundle/home/test/test_EPL.jpg")
+                }
                 let tap = UITapGestureRecognizer(target: self, action: "imageViewTaped:")
                 imageView.addGestureRecognizer(tap)
                 scrollView.addSubview(imageView)
             }
         }
+        if self.count > 0 {
+            self.addTimer()
+            pageControl.numberOfPages = self.count
+            self.scrollView.contentSize = CGSize(width: CGFloat(self.count + 2) * scrollW, height: 0)
+        }
+    }
+    
+    func setImages(images: [AnyObject]) {
+        self.imageUrls = images
+        self.count = images.count
+        reLayout()
+    }
+    
+    func setupMainView() {
+        let scrollW = self.frame.size.width
+        let scrollH = self.frame.size.height
+        
+        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: scrollW, height: scrollH))
         
         scrollView.scrollsToTop = false;
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.contentOffset = CGPoint(x: scrollW, y: 0)
         scrollView.pagingEnabled = true
-        scrollView.contentSize = CGSize(width: CGFloat(self.count + 2) * scrollW, height: 0)
         self.addSubview(scrollView)
         
         pageControl = UIPageControl(frame: CGRect(x: 0, y: scrollH - 10 - 10, width: scrollW, height: 10))
-        pageControl.numberOfPages = self.count
         pageControl.userInteractionEnabled = false
         pageControl.currentPageIndicatorTintColor = self.currentPageIndicatorColor
         pageControl.pageIndicatorTintColor = self.pageIndicatorColor
@@ -75,9 +90,7 @@ class CarouselView: UIView, UIScrollViewDelegate{
         scrollView.delegate = self
         print("init over")
         
-        if self.count > 0 {
-            self.addTimer()
-        }
+        
         
     }
     

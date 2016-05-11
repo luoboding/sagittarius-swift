@@ -47,7 +47,7 @@ extension HomeViewController{
         self.table.delegate = self.delegate
         
         let imageUrl = ["images.bundle/home/test/test_EPL.jpg", "images.bundle/home/test/test_NBA.jpg"]
-        let carouselView = CarouselView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 113), delegate: self, imageUrls: imageUrl, placeHolderImage: "", timeInterval: 3, currentPageIndicatorColor: UIColor.whiteColor(), pageIndicatorColor: UIColor.lightGrayColor())
+        carouselView = CarouselView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 113), delegate: self, imageUrls: imageUrl, placeHolderImage: "", timeInterval: 3, currentPageIndicatorColor: UIColor.whiteColor(), pageIndicatorColor: UIColor.lightGrayColor())
         self.table.tableHeaderView = carouselView
         self.view.addSubview(self.table)
         self.table.snp_makeConstraints { (make) -> Void in

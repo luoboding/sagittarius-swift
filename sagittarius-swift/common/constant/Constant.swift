@@ -7,7 +7,7 @@
 //
 import UIKit
 struct Constant {
-    private static let Host = "https://dev-ios.pickupstar.com/";
+    private static let Host = "https://dev-ios.pickupstar.com/api/";
     static let kWithScaleSize = CGRectGetWidth(UIScreen.mainScreen().bounds) / 375.0
     static let kHeightScaleSize = CGRectGetHeight(UIScreen.mainScreen().bounds) / 667.0
     static let kLoadingString = "加载中..."

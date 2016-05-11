@@ -11,6 +11,7 @@
 		BD1DAAC61CDB2CF60049C95E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DAAC51CDB2CF50049C95E /* HomeService.swift */; };
 		BD1DAACB1CDB4CB90049C95E /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1DAACA1CDB4CB90049C95E /* HomeNavigationView.swift */; };
 		BD1DAACD1CDB50840049C95E /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD1DAACC1CDB50840049C95E /* images.bundle */; };
+		BD2503051CE19A870039ABC2 /* UIImageView+loadWithUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2503041CE19A870039ABC2 /* UIImageView+loadWithUrl.swift */; };
 		BD4E53501CDC4E7A0010CB56 /* HomeTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E534F1CDC4E7A0010CB56 /* HomeTableViewDataSource.swift */; };
 		BD4E53531CDC56050010CB56 /* HomeTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E53521CDC56050010CB56 /* HomeTableViewDelegate.swift */; };
 		BD4E53561CDC9EAE0010CB56 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E53551CDC9EAE0010CB56 /* Constant.swift */; };
@@ -35,6 +36,7 @@
 		BD1DAAC51CDB2CF50049C95E /* HomeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeService.swift; path = home/service/HomeService.swift; sourceTree = "<group>"; };
 		BD1DAACA1CDB4CB90049C95E /* HomeNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNavigationView.swift; path = home/view/HomeNavigationView.swift; sourceTree = "<group>"; };
 		BD1DAACC1CDB50840049C95E /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
+		BD2503041CE19A870039ABC2 /* UIImageView+loadWithUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+loadWithUrl.swift"; path = "common/extension/UIImageView+loadWithUrl.swift"; sourceTree = "<group>"; };
 		BD4E534F1CDC4E7A0010CB56 /* HomeTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewDataSource.swift; path = home/datasource/HomeTableViewDataSource.swift; sourceTree = "<group>"; };
 		BD4E53521CDC56050010CB56 /* HomeTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewDelegate.swift; path = home/delegate/HomeTableViewDelegate.swift; sourceTree = "<group>"; };
 		BD4E53551CDC9EAE0010CB56 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = common/constant/Constant.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				BDCA8E4C1CC20F9A0067FDE7 /* UIColor+hexColor.swift */,
+				BD2503041CE19A870039ABC2 /* UIImageView+loadWithUrl.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				BDCA8E4F1CC21F660067FDE7 /* NavigationViewController.swift in Sources */,
 				BD659B6B1CC3752F00BD76D0 /* RequestHelper.swift in Sources */,
 				BDCA8E461CC20DBF0067FDE7 /* TabbarViewController.swift in Sources */,
+				BD2503051CE19A870039ABC2 /* UIImageView+loadWithUrl.swift in Sources */,
 				BDCA8E5B1CC226510067FDE7 /* ContestViewController.swift in Sources */,
 				BD4E53501CDC4E7A0010CB56 /* HomeTableViewDataSource.swift in Sources */,
 				BD4E53591CDCA5D80010CB56 /* HomeViewController+setupUI.swift in Sources */,

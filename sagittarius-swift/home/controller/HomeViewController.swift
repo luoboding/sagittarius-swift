@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, CarouselViewDelegate{
     
     var table : UITableView!
     var tableData : Dictionary<String, AnyObject>!
+    var carouselView: CarouselView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,18 @@ class HomeViewController: UIViewController, CarouselViewDelegate{
             print("error is \(response)")
         }
         
-        HomeService().getDataWith(nil, success: success, failure: failure);
+        HomeService.sharedInstance.getDataWith(nil, success: success, failure: failure);
+        
+        HomeService.sharedInstance.getCarousel({ (data, response) -> Void in
+            
+            if let result = data as? [AnyObject] {
+                print("data is \(result)")
+                self.carouselView.setImages(result)
+            }
+            
+            }) { (response) -> Void in
+                
+        }
     }
     
     override func didReceiveMemoryWarning() {
