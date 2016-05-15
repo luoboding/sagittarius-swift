@@ -56,5 +56,9 @@ extension HomeViewController{
             make.bottom.equalTo(self.view.snp_bottom).offset(49)
         }
         
+//        let loadingView = LoaingView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+//        loadingView.backgroundColor = UIColor.redColor()
+//        self.view.addSubview(loadingView)
+        
     }
 }

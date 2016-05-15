@@ -32,7 +32,26 @@ class HomeViewController: UIViewController, CarouselViewDelegate{
         self.navigationController?.navigationBarHidden = true
         self.setupUi("-----babababab");
         self.requestData()
+//        self.test()
+        
     }
+    
+//    func test() {
+//        let persons = [["name": "张三", "age": 12], ["name": "李四", "age" :10], ["name":"王五", "age": 18], ["name": "王二", "age" : 15]]
+//    
+//        
+//        let array = persons.map { (x: [String : NSObject]) -> [String : NSObject] in
+//            let age =  x["age"] as! Int
+//            return ["name": x["name"]!, "age": age*2]
+//        }
+//    
+//        let result = persons.find { (x: [String: NSObject]) -> Bool in
+//            return x["name"] as! String == "王二"
+//        }
+//    
+//        print("array is \(array)")
+//        
+//    }
     
     func requestData() ->Void {
         
