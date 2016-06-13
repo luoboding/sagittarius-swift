@@ -1,9 +1,22 @@
 PODS:
   - ReachabilitySwift (2.3.3)
+  - ReactiveCocoa (4.1.0):
+    - ReactiveCocoa/UI (= 4.1.0)
+    - Result (~> 2.0)
+  - ReactiveCocoa/Core (4.1.0):
+    - ReactiveCocoa/no-arc
+    - Result (~> 2.0)
+  - ReactiveCocoa/no-arc (4.1.0):
+    - Result (~> 2.0)
+  - ReactiveCocoa/UI (4.1.0):
+    - ReactiveCocoa/Core
+    - Result (~> 2.0)
+  - Result (2.0.0)
   - SnapKit (0.15.0)
 
 DEPENDENCIES:
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
+  - ReactiveCocoa (~> 4.1.0)
   - SnapKit (~> 0.15.0)
 
 EXTERNAL SOURCES:
@@ -17,6 +30,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
+  ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
+  Result: 9e75e1111c774c6ac594e14907b15057053a7959
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
 
 COCOAPODS: 0.39.0

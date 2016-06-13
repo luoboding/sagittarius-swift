@@ -6,6 +6,7 @@ use_frameworks!
 target 'sagittarius-swift' do
     pod 'ReachabilitySwift', :git => 'https://github.com/ashleymills/Reachability.swift'
     pod 'SnapKit', '~> 0.15.0'
+    pod 'ReactiveCocoa', '~> 4.1.0'
 
 end
 

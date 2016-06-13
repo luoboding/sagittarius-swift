@@ -49,7 +49,7 @@ class CarouselView: UIView, UIScrollViewDelegate{
                 if let item = self.imageUrls[i] as? Dictionary<String, AnyObject> {
                     imageView.loadWithUrl((item["viewImageUrl"] as? String)!, placeHolder: self.placeHolderImage)
                 }
-                let tap = UITapGestureRecognizer(target: self, action: "imageViewTaped:")
+                let tap = UITapGestureRecognizer(target: self, action: #selector(CarouselView.imageViewTaped(_:)))
                 imageView.addGestureRecognizer(tap)
                 scrollView.addSubview(imageView)
             }

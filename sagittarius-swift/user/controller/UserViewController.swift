@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class UserViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "User"
 
+        let input = UITextField(frame: CGRect(x: 40, y: 40, width: 100, height: 40))
+        self.view.addSubview(input)
         // Do any additional setup after loading the view.
     }
 
