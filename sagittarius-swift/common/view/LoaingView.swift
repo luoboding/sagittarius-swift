@@ -10,10 +10,6 @@ import UIKit
 
 class LoaingView: UIView {
     
-    var leftTopCircle: UIView!
-    var leftBottomCircle: UIView!
-    var rigthtTopCircle: UIView!
-    var rightBottomCircle: UIView!
     let heightForCircle = 30.0
     let widthForCircle = 30.0
     
