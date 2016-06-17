@@ -1,4 +1,2 @@
 language: swift
-before_install:
-    - pod install
 script: xctool -workspace sagittarius-swift.xcworkspace -scheme sagittarius-swift test
