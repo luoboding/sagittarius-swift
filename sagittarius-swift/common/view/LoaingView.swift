@@ -17,22 +17,24 @@ class LoaingView: UIView {
     let heightForCircle = 30.0
     let widthForCircle = 30.0
     
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        assert(frame.size.width == frame.size.height, "must be a cube")
-        
-        let r = frame.size.width/2
-        let halfOfBorderLength = Double(r) * sin(M_PI/8)
-        
-        print("r \(halfOfBorderLength)")
-//        self.leftTopCircle = UIView(frame: CGRect(x: , y: <#T##CGFloat#>, width: widthForCircle, height: heightForCircle))
-        
+    override func drawRect(rect: CGRect) {
+        super.drawRect(rect)
+        drawTrianglePath(rect)
     }
     
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func drawTrianglePath (frame: CGRect) {
+        let path = UIBezierPath()
+        path.moveToPoint(CGPoint(x: 0, y: 2))
+        path.addLineToPoint(CGPoint(x: CGRectGetWidth(frame), y: 2))
+        path.addLineToPoint(CGPoint(x: CGRectGetWidth(frame)/2, y: CGRectGetHeight(frame)));
+        path.closePath()
+        path.lineWidth = 2
+        
+        UIColor.redColor().set()
+        path.fill()
+        UIColor.blueColor().set()
+        path.stroke()
+        
     }
 
 }

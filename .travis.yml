@@ -1,0 +1,5 @@
+language: swift
+before_install:
+    - brew update
+    - brew install xctool
+script: xctool -workspace sagittarius-swift.xcworkspace -scheme sagittarius-swift test

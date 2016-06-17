@@ -326,6 +326,7 @@
 				TargetAttributes = {
 					BDCA8E2D1CC20C8E0067FDE7 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Y73S4ZHUJL;
 					};
 				};
 			};
@@ -535,10 +536,13 @@
 			baseConfigurationReference = 63FC8B5B388455AA4A3AB762 /* Pods-sagittarius-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "sagittarius-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pickupstar.sagittarius-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pickupstar.isagittarius;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -547,10 +551,13 @@
 			baseConfigurationReference = 169963946E4CC17CAF5BDA7F /* Pods-sagittarius-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "sagittarius-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pickupstar.sagittarius-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pickupstar.isagittarius;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

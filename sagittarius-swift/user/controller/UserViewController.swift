@@ -15,8 +15,9 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "User"
 
-        let input = UITextField(frame: CGRect(x: 40, y: 40, width: 100, height: 40))
-        self.view.addSubview(input)
+        let loadingView = LoaingView(frame: CGRect(x: 0, y: 100, width: 100, height: 100))
+        loadingView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(loadingView)
         // Do any additional setup after loading the view.
     }
 
